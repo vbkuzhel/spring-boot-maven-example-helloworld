@@ -1,0 +1,18 @@
+---
+filebeat.prospectors:
+  - input_type: log
+    Paths:
+      - /opt/app/app.log
+    document_type: springboot
+    fields:  
+      service: CMP
+      component: Activity
+      application: MP
+      environment: PREDEV
+      location: internal
+      my_index: mpactivity-predev
+      my_type: #it is the type of the event. It is something identified for a group of similar logs. 
+scan_frequency: 60
+output.logstash:
+    hosts: ["localhost:5044"]
+    loadbalance: true  
