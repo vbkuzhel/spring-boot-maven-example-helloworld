@@ -1,5 +1,4 @@
----
-filebeat.inputs:
+filebeat.prospectors:
 - type: log
   paths:
     - /opt/app/app.log
