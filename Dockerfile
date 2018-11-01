@@ -25,11 +25,11 @@ RUN ["mkdir", "-p", "/opt/app"]
 WORKDIR /opt/app
 
 COPY ["target/*.war", "spring.war"]
-COPY ["entrypoint.sh", "/entrypoint.sh"]
+COPY ["entrypoint.sh", "/opt/app/"]
 COPY filebeat/filebeat.yml /etc/filebeat/filebeat.yml
 #COPY ["/opt/certificates/keystore.jks", "configuration/keystore.jks"]
 
 EXPOSE 8080
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/opt/app/entrypoint.sh"]
 

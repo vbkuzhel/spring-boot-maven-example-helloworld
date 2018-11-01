@@ -4,4 +4,4 @@ filebeat.prospectors:
     - /opt/app/app.log
 scan_frequency: 60
 output.logstash:
-  hosts: ["127.0.0.1:5044"]
+  hosts: ["10.0.15.10:5044"]
